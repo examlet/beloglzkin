@@ -1,9 +1,17 @@
 import { defineNuxtConfig } from 'nuxt'
+//import { FirebaseOptions } from "firebase/app";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     ssr: true,
     srcDir: "src",
+    // publicRuntimeConfig: {
+    //     nodeEnv: process.env.NODE_ENV,
+    //     firebaseConfig: {
+    //       apiKey: process.env.FIREBASE_API_KEY,
+    //       authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    //     },
+    //   } as { firebaseConfig: FirebaseOptions },
     app: {
         head: {
           "title": "Система управления проектами"

@@ -20,7 +20,10 @@ import {
   NCard
 } from "naive-ui";
 
-const { signInWithGoogle, signOut, user } = useAuth();
+const router = useRouter()
+const signIn = () => {
+  router.push('/app')
+}
 </script>
 
 <template>
@@ -34,7 +37,7 @@ const { signInWithGoogle, signOut, user } = useAuth();
             </p>
           </NSpace>
           <NSpace align="center" style="padding-top: 4px">
-            <NuxtLink to="/app" @click="loadingBar.start();">
+            <NuxtLink to="/app">
               <NButton strong type="primary">О ПРИЛОЖЕНИИ</NButton>
             </NuxtLink>
           </NSpace>
@@ -51,7 +54,7 @@ const { signInWithGoogle, signOut, user } = useAuth();
             <n-input type="password" show-password-on="mousedown" placeholder="введите пароль" />
           </n-form-item>
         </n-form>
-        <n-button type="primary" block secondary strong @click="signInWithGoogle">
+        <n-button type="primary" block secondary strong @click="signIn">
           Войти
         </n-button>
       </NCard>

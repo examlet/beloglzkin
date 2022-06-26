@@ -14,7 +14,7 @@
                 </n-form-item>
             </n-form>
             <template #footer>
-                <n-button @click="showModal = false" type="primary" style="margin-left: 280px;">
+                <n-button @click="showModal = false; kek = true;" type="primary" style="margin-left: 280px;">
                     Продолжить
                 </n-button>
             </template>
@@ -30,7 +30,7 @@
             <n-layout style="padding: 40px; background-color: #edeef0;">
                 <h1 style="font-weight: 500; font-size: 24px;">ДОСТУПНЫЕ ДОСКИ</h1>
                 <n-space style="margin-top: 32px;">
-                    <NCard hoverable>
+                    <NCard hoverable @click="cont">
                         ОП: Отдел Айнура
                     </NCard>
                     <NCard hoverable>
@@ -38,6 +38,9 @@
                     </NCard>
                     <NCard hoverable>
                         ОП: Отдел Ильнара
+                    </NCard>
+                    <NCard v-show="kek" hoverable style="background-color: red;">
+                        Новая доска
                     </NCard>
                 </n-space>
                 <n-button @click="showModal = true" type="primary" style="margin-top: 40px;">
@@ -65,6 +68,12 @@ function renderIcon(icon: Component) {
 }
 
 const showModal = ref(false);
+const kek = ref(false);
+
+const router = useRouter();
+const cont = () => {
+    router.push('/app/100701')
+}
 
 const menuOptions = [
     {
